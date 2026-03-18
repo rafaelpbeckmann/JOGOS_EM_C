@@ -12,6 +12,7 @@ void perguntasErespostas ()
     int resposta;
     int novaResposta;
     int novaJogada = 0;
+    int acertos[5];
 
     //pergunta 1
 
@@ -26,7 +27,7 @@ void perguntasErespostas ()
         printf("escolha a alternatica(1 a 4): ");
         scanf("%d", &resposta);
 
-        // condições de resposta 
+        // condição de resposta 1
 
         while (resposta < 1 || resposta > 4) 
         {
@@ -40,47 +41,124 @@ void perguntasErespostas ()
         scanf("%d", &resposta);
         }
 
+        //resultado 1
+
         if (resposta == 3) 
         {
             printf("parabens voce acertou!\n");
+            acertos[0] = 1;
         }
 
         else 
         {
+
             printf("escolha errada!\n");
-            printf("a escolha correta era 3!\n");
-
-            // escolha do usuario
-
-        printf("deseja tentar novamente?\n");
-        printf("1. tentar de novo\n");
-        printf("2. sair\n");
-        printf("selecione sua resposta(1 ou 2): ");
-        scanf("%d", &novaJogada);
-
-
-        while(novaJogada != 1 && novaJogada !=2)
-        {
-        printf("digite um valor valido\n");
-        printf("deseja tentar novamente?\n");
-        printf("1. tentar de novo\n");
-        printf("2. sair\n");
-        printf("selecione sua resposta(1 ou 2): ");
-        scanf("%d", &novaJogada);
-        } 
-
-        if (novaJogada == 2) 
-        {
-            return;
+            printf("escolha correta era 3(jupiter)\n");
+            acertos[0] = 0;
         }
 
+        //pergunta2
+
+        printf("pergunta 2\n");
+        printf("qual é a capital da alemanha?\n");
+        printf("1.Belém\n");
+        printf("2.Berlim\n");
+        printf("3.bruxelas\n");
+        printf("4.toquio\n");
+        printf("insira a sua resposta (1 a 4): ");
+        scanf("%d", &resposta);
+        
+        //condiçao de resposta 2
+
+        while(resposta < 1 || resposta > 4) 
+        {
+            printf("esolha uma alternativa valida");
+            printf("qual é a capital da alemanha?\n");
+        printf("1.Belém\n");
+        printf("2.Berlim\n");
+        printf("3.bruxelas\n");
+        printf("4.toquio\n");
+        printf("insira a sua resposta (1 a 4): ");
+        scanf("%d", &resposta);
+
         }
+
+        //resultado  2
+
+        if(resposta == 2) 
+        {
+            printf("parabens! voce acertou!");
+            acertos[1] = 1;
+        }
+
+        else
+        {
+            printf("escolha errada!");
+            printf("a escolha correta era 2. Berlim");
+            acertos[1] = 0;
+        }
+
+        //pergunta 3
+
+        printf("pergunta 3\n");
+        printf("quem e o maior time do norte do pais?\n");
+        printf("1.Clube do Remo\n");
+        printf("2.paysandu\n");
+        printf("3.Tuna\n");
+        printf("4.Barcarena\n");
+        printf("insira a sua resposta (1 a 4): ");
+        scanf("%d", &resposta);
+
+        //condição de resposta 3
+
+        while(resposta < 1 || resposta > 4) 
+        {
+           printf("escolha uma alternativa valida");
+           printf("quem e o maior time do norte do pais?\n");
+           printf("1.Clube do Remo\n");
+           printf("2.paysandu\n");
+           printf("3.Tuna\n");
+           printf("4.Barcarena\n");
+           printf("insira a sua resposta (1 a 4): ");
+           scanf("%d", &resposta);
+
+        }
+
+        //resultado 3
+
+        if(resposta == 1) 
+        {
+            printf("parabens voce acretou!");
+            acertos[2] = 1;
+        }
+
+        else if(resposta == 2) 
+        {
+            printf("paysandu disk");
+            printf("sai pra la serie C");
+            acertos[2] = 0;
+        }
+
+        else 
+        {
+            printf("escolha errada!");
+            printf("a escolha correta era 1.clube do remo");
+            acertos[2] = 0;
+        }
+
+        //pergunta 4
+
+        
+
+
 
     } while(novaJogada == 1);
-
-    //encerramento da pergunta1
-
 }
+
+
+
+     //encerramento do jogo pergunstas e respostas
+
 void cobraNaCaixa ()
 {
 printf("jogo em desenvolvimento...\n");
