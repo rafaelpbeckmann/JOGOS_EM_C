@@ -277,8 +277,8 @@ void cobraNaCaixa ()
 
     //continua
 
-    printf("jogo em desenvolvimento");
-    
+    printf("jogo em desenvolvimento\n");
+
 }
 void gousmasWar () 
 {
