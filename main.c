@@ -1,4 +1,6 @@
 # include <stdio.h>
+# include <stdlib.h>
+# include <time.h>
 
 //funções dos jogos 
 
@@ -261,7 +263,22 @@ void perguntasErespostas ()
 
 void cobraNaCaixa ()
 {
-printf("jogo em desenvolvimento...\n");
+
+    //variaveis jogo 2 
+
+    int jogador;
+    int escolhaJogador;
+    int posicaoCobra;
+    int posicaoBotao;
+    int caixas[5];
+    char nomes[7][20] = {"rameses","nefertiti","tutancamon","cleopatra","anubis","horus","osiris"};
+    int idNome1;
+    int idNome2;
+
+    //continua
+
+    printf("jogo em desenvolvimento");
+    
 }
 void gousmasWar () 
 {
