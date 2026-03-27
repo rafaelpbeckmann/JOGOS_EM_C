@@ -257,8 +257,6 @@ void perguntasErespostas ()
     } while(novaJogada == 1);
 }
 
-
-
      //encerramento do jogo pergunstas e respostas
 
 void cobraNaCaixa ()
@@ -275,9 +273,53 @@ void cobraNaCaixa ()
     int idNome1;
     int idNome2;
 
-    //continua
+    //inicio do jogo
 
-    printf("jogo em desenvolvimento\n");
+    for(int i = 0 ; i < 7; i++)
+    {
+        printf("%d - %s\n", i + 1, nomes[i]);
+    }
+
+    //resposta do jogador 1
+    
+    printf("jogador 1, qual o numero do seu nome?\n: ");
+    scanf("%d", &escolhaJogador);
+
+    //validação de resposta do jogador 1
+
+    while(escolhaJogador < 1 || escolhaJogador > 7)
+    {
+    printf("escolha inválida, tente novamente\n");
+    printf("jogador 1, qual o numero do seu nome?\n: ");
+    scanf("%d", &escolhaJogador);
+    }
+    idNome1 = escolhaJogador - 1;
+
+    //resposta do jogador 2
+
+    printf("jogador 2, qual o numero do seu nome?\n: ");
+    scanf("%d", &escolhaJogador);
+
+    //validação de resposta do jogador 2
+
+    while(escolhaJogador < 1 || escolhaJogador > 7)
+    {
+        printf("escolha invalida, tente novamente\n");
+        printf("jogador 2, qual o numero do seu nome?\n: ");
+        scanf("%d", &escolhaJogador);
+    }
+    idNome2 = escolhaJogador - 1;
+
+    //aleatorizador
+
+    int jogadorAtual = rand() % 2;
+    posicaoBotao = (rand() % 5) + 1;
+
+    do
+    {
+        posicaoCobra = (rand() % 5) + 1;
+
+    }while(posicaoCobra == posicaoBotao);
 
 }
 void gousmasWar () 
