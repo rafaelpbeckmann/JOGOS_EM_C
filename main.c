@@ -259,6 +259,93 @@ void perguntasErespostas ()
 
      //encerramento do jogo pergunstas e respostas
 
+void imprimirEspacos(int quantidade)
+{
+    for(int i = 0; i < quantidade; i++)
+    {
+        printf(" ");
+    }
+}
+
+void exibirLinhaCaixas(int caixas[], int inicio, int quantidade)
+{
+    const int larguraTela = 80;
+    const int larguraCaixa = 11;
+    const int espacoEntre = 4;
+    int larguraLinha = (quantidade * larguraCaixa) + ((quantidade - 1) * espacoEntre);
+    int recuo = (larguraTela - larguraLinha) / 2;
+
+    if(recuo < 0)
+    {
+        recuo = 0;
+    }
+
+    imprimirEspacos(recuo);
+    for(int i = 0; i < quantidade; i++)
+    {
+        printf(" _________ ");
+        if(i < quantidade - 1)
+        {
+            imprimirEspacos(espacoEntre);
+        }
+    }
+    printf("\n");
+
+    imprimirEspacos(recuo);
+    for(int i = 0; i < quantidade; i++)
+    {
+        printf("|         |");
+        if(i < quantidade - 1)
+        {
+            imprimirEspacos(espacoEntre);
+        }
+    }
+    printf("\n");
+
+    imprimirEspacos(recuo);
+    for(int i = 0; i < quantidade; i++)
+    {
+        int indiceCaixa = inicio + i;
+        char conteudo = (caixas[indiceCaixa] == 1) ? 'X' : (char)('1' + indiceCaixa);
+        printf("|    %c    |", conteudo);
+        if(i < quantidade - 1)
+        {
+            imprimirEspacos(espacoEntre);
+        }
+    }
+    printf("\n");
+
+    imprimirEspacos(recuo);
+    for(int i = 0; i < quantidade; i++)
+    {
+        printf("|_________|");
+        if(i < quantidade - 1)
+        {
+            imprimirEspacos(espacoEntre);
+        }
+    }
+    printf("\n");
+
+    imprimirEspacos(recuo);
+    for(int i = 0; i < quantidade; i++)
+    {
+        int numeroCaixa = inicio + i + 1;
+        printf("     %d     ", numeroCaixa);
+        if(i < quantidade - 1)
+        {
+            imprimirEspacos(espacoEntre);
+        }
+    }
+    printf("\n");
+}
+
+void exibirCaixas(int caixas[])
+{
+    exibirLinhaCaixas(caixas, 0, 2);
+    printf("\n");
+    exibirLinhaCaixas(caixas, 2, 3);
+}
+
 void cobraNaCaixa ()
 {
 
@@ -342,18 +429,8 @@ void cobraNaCaixa ()
             printf("vez de %s\n", nomes[idNome2]);
         }
 
-        printf("ola jogador, faça a escolha das suas caixas! \n");
-        for(int i = 0; i < 5; i++)
-        {
-            if(caixas[i] == 0)
-            {
-                printf("caixa %d - fechada (disponivel)\n", i + 1);
-            }
-            else
-            {
-                printf("caixa %d - ja aberta\n", i + 1);
-            }
-        }
+        printf("ola jogador, faca a escolha das suas caixas! \n");
+        exibirCaixas(caixas);
         printf("escolha a sua caixa: ");
         scanf("%d", &escolhaJogador);
 
@@ -369,18 +446,8 @@ void cobraNaCaixa ()
         {
         printf("a escolha deve ser de um dos numeros abaixo, tente de novo\n");
         }
-        printf("ola jogador, faça a escolha das suas caixas! \n");
-        for(int i = 0; i < 5; i++)
-        {
-            if(caixas[i] == 0)
-            {
-                printf("caixa %d - fechada (disponivel)\n", i + 1);
-            }
-            else
-            {
-                printf("caixa %d - ja aberta\n", i + 1);
-            }
-        }
+        printf("ola jogador, faca a escolha das suas caixas! \n");
+        exibirCaixas(caixas);
         printf("escolha a sua caixa: ");
         scanf("%d", &escolhaJogador);
         }
