@@ -560,7 +560,26 @@ void cobraNaCaixa ()
 }
 void gousmasWar () 
 {
-    printf("jogo em desenvolvimento...\n");
+    //variáveis do jogo 3 
+
+    int gousmas[2][2];
+    int ativas[2][2];
+    int turnoAtual;
+
+    //inicialização dos turnos
+
+    srand(time(NULL));
+    turnoAtual = rand() % 2;
+
+    //inicialização de arrays 
+
+    for(int i = 0; i < 2; i++){
+        for(int j = 0; j < 2; j++)
+        {
+            gousmas[i][j] = 1;
+            ativas[i][j] = 1;
+        }
+    }
 }
 int main () 
 {
