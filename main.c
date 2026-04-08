@@ -259,93 +259,6 @@ void perguntasErespostas ()
 
      //encerramento do jogo pergunstas e respostas
 
-void imprimirEspacos(int quantidade)
-{
-    for(int i = 0; i < quantidade; i++)
-    {
-        printf(" ");
-    }
-}
-
-void exibirLinhaCaixas(int caixas[], int inicio, int quantidade)
-{
-    const int larguraTela = 80;
-    const int larguraCaixa = 11;
-    const int espacoEntre = 4;
-    int larguraLinha = (quantidade * larguraCaixa) + ((quantidade - 1) * espacoEntre);
-    int recuo = (larguraTela - larguraLinha) / 2;
-
-    if(recuo < 0)
-    {
-        recuo = 0;
-    }
-
-    imprimirEspacos(recuo);
-    for(int i = 0; i < quantidade; i++)
-    {
-        printf(" _________ ");
-        if(i < quantidade - 1)
-        {
-            imprimirEspacos(espacoEntre);
-        }
-    }
-    printf("\n");
-
-    imprimirEspacos(recuo);
-    for(int i = 0; i < quantidade; i++)
-    {
-        printf("|         |");
-        if(i < quantidade - 1)
-        {
-            imprimirEspacos(espacoEntre);
-        }
-    }
-    printf("\n");
-
-    imprimirEspacos(recuo);
-    for(int i = 0; i < quantidade; i++)
-    {
-        int indiceCaixa = inicio + i;
-        char conteudo = (caixas[indiceCaixa] == 1) ? 'X' : (char)('1' + indiceCaixa);
-        printf("|    %c    |", conteudo);
-        if(i < quantidade - 1)
-        {
-            imprimirEspacos(espacoEntre);
-        }
-    }
-    printf("\n");
-
-    imprimirEspacos(recuo);
-    for(int i = 0; i < quantidade; i++)
-    {
-        printf("|_________|");
-        if(i < quantidade - 1)
-        {
-            imprimirEspacos(espacoEntre);
-        }
-    }
-    printf("\n");
-
-    imprimirEspacos(recuo);
-    for(int i = 0; i < quantidade; i++)
-    {
-        int numeroCaixa = inicio + i + 1;
-        printf("     %d     ", numeroCaixa);
-        if(i < quantidade - 1)
-        {
-            imprimirEspacos(espacoEntre);
-        }
-    }
-    printf("\n");
-}
-
-void exibirCaixas(int caixas[])
-{
-    exibirLinhaCaixas(caixas, 0, 2);
-    printf("\n");
-    exibirLinhaCaixas(caixas, 2, 3);
-}
-
 void cobraNaCaixa ()
 {
 
@@ -430,7 +343,68 @@ void cobraNaCaixa ()
         }
 
         printf("ola jogador, faca a escolha das suas caixas! \n");
-        exibirCaixas(caixas);
+        {
+            const int larguraTela = 80;
+            const int larguraCaixa = 11;
+            const int espacoEntre = 4;
+            int recuoPrimeiraLinha = (larguraTela - ((2 * larguraCaixa) + espacoEntre)) / 2;
+            int recuoSegundaLinha = (larguraTela - ((3 * larguraCaixa) + (2 * espacoEntre))) / 2;
+
+            if(recuoPrimeiraLinha < 0) recuoPrimeiraLinha = 0;
+            if(recuoSegundaLinha < 0) recuoSegundaLinha = 0;
+
+            for(int linha = 0; linha < 2; linha++)
+            {
+                int inicio = (linha == 0) ? 0 : 2;
+                int quantidade = (linha == 0) ? 2 : 3;
+                int recuo = (linha == 0) ? recuoPrimeiraLinha : recuoSegundaLinha;
+
+                for(int i = 0; i < recuo; i++) printf(" ");
+                for(int i = 0; i < quantidade; i++)
+                {
+                    printf(" _________ ");
+                    if(i < quantidade - 1) for(int j = 0; j < espacoEntre; j++) printf(" ");
+                }
+                printf("\n");
+
+                for(int i = 0; i < recuo; i++) printf(" ");
+                for(int i = 0; i < quantidade; i++)
+                {
+                    printf("|         |");
+                    if(i < quantidade - 1) for(int j = 0; j < espacoEntre; j++) printf(" ");
+                }
+                printf("\n");
+
+                for(int i = 0; i < recuo; i++) printf(" ");
+                for(int i = 0; i < quantidade; i++)
+                {
+                    int indiceCaixa = inicio + i;
+                    char conteudo = (caixas[indiceCaixa] == 1) ? 'X' : (char)('1' + indiceCaixa);
+                    printf("|    %c    |", conteudo);
+                    if(i < quantidade - 1) for(int j = 0; j < espacoEntre; j++) printf(" ");
+                }
+                printf("\n");
+
+                for(int i = 0; i < recuo; i++) printf(" ");
+                for(int i = 0; i < quantidade; i++)
+                {
+                    printf("|_________|");
+                    if(i < quantidade - 1) for(int j = 0; j < espacoEntre; j++) printf(" ");
+                }
+                printf("\n");
+
+                for(int i = 0; i < recuo; i++) printf(" ");
+                for(int i = 0; i < quantidade; i++)
+                {
+                    int numeroCaixa = inicio + i + 1;
+                    printf("     %d     ", numeroCaixa);
+                    if(i < quantidade - 1) for(int j = 0; j < espacoEntre; j++) printf(" ");
+                }
+                printf("\n");
+
+                if(linha == 0) printf("\n");
+            }
+        }
         printf("escolha a sua caixa: ");
         scanf("%d", &escolhaJogador);
 
@@ -447,7 +421,68 @@ void cobraNaCaixa ()
         printf("a escolha deve ser de um dos numeros abaixo, tente de novo\n");
         }
         printf("ola jogador, faca a escolha das suas caixas! \n");
-        exibirCaixas(caixas);
+        {
+            const int larguraTela = 80;
+            const int larguraCaixa = 11;
+            const int espacoEntre = 4;
+            int recuoPrimeiraLinha = (larguraTela - ((2 * larguraCaixa) + espacoEntre)) / 2;
+            int recuoSegundaLinha = (larguraTela - ((3 * larguraCaixa) + (2 * espacoEntre))) / 2;
+
+            if(recuoPrimeiraLinha < 0) recuoPrimeiraLinha = 0;
+            if(recuoSegundaLinha < 0) recuoSegundaLinha = 0;
+
+            for(int linha = 0; linha < 2; linha++)
+            {
+                int inicio = (linha == 0) ? 0 : 2;
+                int quantidade = (linha == 0) ? 2 : 3;
+                int recuo = (linha == 0) ? recuoPrimeiraLinha : recuoSegundaLinha;
+
+                for(int i = 0; i < recuo; i++) printf(" ");
+                for(int i = 0; i < quantidade; i++)
+                {
+                    printf(" _________ ");
+                    if(i < quantidade - 1) for(int j = 0; j < espacoEntre; j++) printf(" ");
+                }
+                printf("\n");
+
+                for(int i = 0; i < recuo; i++) printf(" ");
+                for(int i = 0; i < quantidade; i++)
+                {
+                    printf("|         |");
+                    if(i < quantidade - 1) for(int j = 0; j < espacoEntre; j++) printf(" ");
+                }
+                printf("\n");
+
+                for(int i = 0; i < recuo; i++) printf(" ");
+                for(int i = 0; i < quantidade; i++)
+                {
+                    int indiceCaixa = inicio + i;
+                    char conteudo = (caixas[indiceCaixa] == 1) ? 'X' : (char)('1' + indiceCaixa);
+                    printf("|    %c    |", conteudo);
+                    if(i < quantidade - 1) for(int j = 0; j < espacoEntre; j++) printf(" ");
+                }
+                printf("\n");
+
+                for(int i = 0; i < recuo; i++) printf(" ");
+                for(int i = 0; i < quantidade; i++)
+                {
+                    printf("|_________|");
+                    if(i < quantidade - 1) for(int j = 0; j < espacoEntre; j++) printf(" ");
+                }
+                printf("\n");
+
+                for(int i = 0; i < recuo; i++) printf(" ");
+                for(int i = 0; i < quantidade; i++)
+                {
+                    int numeroCaixa = inicio + i + 1;
+                    printf("     %d     ", numeroCaixa);
+                    if(i < quantidade - 1) for(int j = 0; j < espacoEntre; j++) printf(" ");
+                }
+                printf("\n");
+
+                if(linha == 0) printf("\n");
+            }
+        }
         printf("escolha a sua caixa: ");
         scanf("%d", &escolhaJogador);
         }
