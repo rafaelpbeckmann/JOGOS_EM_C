@@ -26,7 +26,7 @@ void perguntasErespostas ()
         printf("2: terra\n");
         printf("3: jupiter\n");
         printf("4: venus\n");
-        printf("escolha a alternatica(1 a 4): ");
+        printf("insira sua resposta(1 a 4): ");
         scanf("%d", &resposta);
 
         // condição de resposta 1
@@ -39,7 +39,7 @@ void perguntasErespostas ()
         printf("2: terra\n");
         printf("3: jupiter\n");
         printf("4: venus\n");
-        printf("escolha a \nalternatica(1 a 4): ");
+        printf("insira sua resposta(1 a 4): ");
         scanf("%d", &resposta);
         }
 
@@ -146,6 +146,7 @@ void perguntasErespostas ()
         printf("2.Guerra da Coreia\n");
         printf("3.Invasao da normandia\n");
         printf("4.Guerra fria\n");
+        printf("insira sua resposta(1 a 4): ");
         scanf("%d", &resposta);
 
         //validação da resposta 4
@@ -565,6 +566,8 @@ void gousmasWar ()
     int gousmas[2][2];
     int ativas[2][2];
     int turnoAtual;
+    char idJogador1[50];
+    char idJogador2[50];
 
     //inicialização dos turnos
 
@@ -580,6 +583,19 @@ void gousmasWar ()
             ativas[i][j] = 1;
         }
     }
+
+    //pergunta do nome do jogador 1
+
+    printf("Jogador 1, qual o seu nome?: ");
+    scanf("%s", &idJogador1);
+
+    //pergunta nome jogador 2
+
+    printf("jogador 2, qual o seu nome?: ");
+    scanf("%s", &idJogador2);
+
+
+    printf("jogo em desenvolvimento");
 }
 int main () 
 {
