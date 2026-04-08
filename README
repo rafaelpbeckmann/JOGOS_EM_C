@@ -1,0 +1,40 @@
+Sistema de Jogos em C
+Projeto desenvolvido para a disciplina de Algoritmos, com o objetivo de aplicar os conceitos fundamentais de programação em C através do desenvolvimento de minijogos interativos em console.
+
+Integrante
+
+Rafael Beckmann
+
+
+Tecnologias Utilizadas
+
+Linguagem C
+Compilador GCC
+Interface via console
+
+
+Descrição do Projeto
+O sistema é composto por um menu principal que dá acesso a três minijogos. O programa permanece em execução até que o usuário escolha sair. Ao selecionar um minijogo, uma breve descrição é exibida antes do início da partida. Ao finalizar, o jogador pode optar por jogar novamente ou voltar ao menu principal.
+
+Minijogos
+Pergunta e Resposta
+Jogo de conhecimentos gerais onde o computador apresenta uma pergunta com quatro alternativas e o jogador deve escolher a resposta correta.
+O jogo contém 5 perguntas fixas. Cada pergunta possui 4 alternativas, sendo apenas 1 correta. Após a escolha, o sistema informa se a resposta está correta ou incorreta e, em caso de erro, exibe a resposta correta. Ao finalizar as 5 perguntas, o jogador pode jogar novamente ou voltar ao menu.
+
+Cobra na Caixa
+Jogo ambientado em uma tumba egípcia onde dois exploradores ficaram presos. No centro da sala há cinco caixas: uma contém o botão para abrir a porta e outra esconde uma cobra mortal.
+Cada jogador escolhe um nome a partir de uma lista de 7 opções predefinidas e o sistema sorteia quem começa. A posição do botão e da cobra é sorteada aleatoriamente a cada nova partida. Os jogadores se alternam escolhendo uma caixa por turno, sendo proibido escolher uma caixa já aberta. Quem encontrar o botão vence; quem encontrar a cobra perde. Ao final, os jogadores podem jogar novamente ou voltar ao menu.
+
+Gousmas War
+Em desenvolvimento.
+
+Como Executar
+Clone o repositório:
+bashgit clone https://github.com/rafaelpbeckmann/JOGOS_EM_C
+Compile o código:
+bashgcc main.c -o jogos
+Execute:
+bash./jogos
+
+Ferramentas e Fontes Utilizadas
+O desenvolvimento do projeto foi realizado com o auxílio do NotebookLM, utilizado como ferramenta de apoio para estruturação da lógica e formulação do código, com base nos materiais e fontes fornecidos pelo professor da disciplina.

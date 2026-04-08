@@ -101,11 +101,11 @@ void perguntasErespostas ()
         //pergunta 3
 
         printf("pergunta 3\n");
-        printf("quem e o maior time do norte do pais?\n");
-        printf("1.Clube do Remo\n");
-        printf("2.paysandu\n");
-        printf("3.Tuna\n");
-        printf("4.Barcarena\n");
+        printf("se um anel tem 3 pedras, quantas pedras tem 11 aneis ?\n");
+        printf("1.33\n");
+        printf("2.300\n");
+        printf("3.27\n");
+        printf("4.90\n");
         printf("insira a sua resposta (1 a 4): ");
         scanf("%d", &resposta);
 
@@ -114,11 +114,11 @@ void perguntasErespostas ()
         while(resposta < 1 || resposta > 4) 
         {
            printf("escolha uma alternativa valida\n");
-           printf("quem e o maior time do norte do pais?\n");
-           printf("1.Clube do Remo\n");
-           printf("2.paysandu\n");
-           printf("3.Tuna\n");
-           printf("4.Barcarena\n");
+           printf("se um anel tem 3 pedras, quantas pedras tem 11 aneis ?\n");
+           printf("1.33\n");
+           printf("2.300\n");
+           printf("3.27\n");
+           printf("4.90\n");
            printf("insira a sua resposta (1 a 4): ");
            scanf("%d", &resposta);
         }
@@ -129,18 +129,6 @@ void perguntasErespostas ()
         {
             printf("parabens! voce acertou!\n");
             acertos[2] = 1;
-        }
-
-        else if(resposta == 3)
-        {
-            printf("nao ganha nada desde 92 haha\n");
-        }
-
-        else if(resposta == 2) 
-        {
-            printf("paysandu disk\n");
-            printf("sai pra la serie C\n");
-            acertos[2] = 0;
         }
 
         else 
@@ -274,7 +262,7 @@ void cobraNaCaixa ()
     int idNome2;
     int novaJogada;
 
-    //inicio do jogo
+    //menu do jogo
 
     for(int i = 0 ; i < 7; i++)
     {
@@ -349,7 +337,7 @@ void cobraNaCaixa ()
             const int larguraTela = 80;
             const int larguraCaixa = 11;
             const int espacoEntre = 4;
-            
+
             //calcular recuo para centralizar cada linha de caixas
 
             int recuoPrimeiraLinha = (larguraTela - ((2 * larguraCaixa) + espacoEntre)) / 2;
