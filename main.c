@@ -559,6 +559,27 @@ void cobraNaCaixa ()
     } while(novaJogada == 1);
 
 }
+
+//função de mostar jogadores do gousmas war
+
+void exibirJogadores (int gousmas [2][2], int ativas[2][2], char nomes[2][50]) 
+{
+    for(int i = 0;i < 2; i++)
+    {
+        printf("jogador %d - %s\n", i + 1, nomes[i]);
+        for (int j = 0; j < 2; j++) 
+        {
+            if(ativas[i][j] == 1)
+            {
+            printf("gousma %d - %d\n",j + 1, gousmas[i][j]);
+            }
+            else 
+            {
+                printf("gousma %d: destruida\n", j + 1);
+            }
+        }
+    }
+}
 void gousmasWar () 
 {
     //variáveis do jogo 3 
@@ -566,8 +587,9 @@ void gousmasWar ()
     int gousmas[2][2];
     int ativas[2][2];
     int turnoAtual;
-    char idJogador1[50];
-    char idJogador2[50];
+    int jogoAtivo = 1;
+    char nomes[2][50];
+    int açaoJogador;
 
     //inicialização dos turnos
 
@@ -587,15 +609,23 @@ void gousmasWar ()
     //pergunta do nome do jogador 1
 
     printf("Jogador 1, qual o seu nome?: ");
-    scanf("%s", &idJogador1);
+    scanf("%s", nomes[0]);
 
     //pergunta nome jogador 2
 
     printf("jogador 2, qual o seu nome?: ");
-    scanf("%s", &idJogador2);
+    scanf("%s", nomes[1]);
 
+    //inicio do loop
 
-    printf("jogo em desenvolvimento");
+    do{
+        exibirJogadores(gousmas,ativas,nomes);
+        printf("vez de %s\n" nomes[turnoAtual]);
+        printf("escolha a sua ação\n");
+        printf("1. Atacar");
+        printf("2. dividir");
+        scanf("%d", &açaoJogador)
+    } while(jogoAtivo != 0)
 }
 int main () 
 {
