@@ -591,7 +591,8 @@ void gousmasWar() {
     char nomes[2][50];
     int acaoJogador;
 
-    // Inicialização (Sua lógica de sorteio e valores iniciais)
+    // Inicialização
+
     srand(time(NULL));
     turnoAtual = rand() % 2;
 
@@ -693,7 +694,7 @@ void gousmasWar() {
                 gousmas[turnoAtual][gousmaReceptora - 1] += pontos;
 
                 // Regra de reviver: se a outra estava morta, volta pro jogo
-                
+
                 if (ativas[turnoAtual][gousmaReceptora - 1] == 0) {
                     ativas[turnoAtual][gousmaReceptora - 1] = 1;
                     printf("A Gousma %d reviveu!\n", gousmaReceptora);
@@ -703,7 +704,7 @@ void gousmasWar() {
             }
         }
 
-        // Verificação de destruição (> 5) - Roda para todos após a jogada
+        // Verificação de destruição (> 5)
 
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
