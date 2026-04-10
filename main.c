@@ -429,10 +429,13 @@ void cobraNaCaixa ()
         printf("ola jogador, faca a escolha das suas caixas! \n");
         {
             //imprimir caixas
+
             const int larguraTela = 80;
             const int larguraCaixa = 11;
             const int espacoEntre = 4;
+
             //calcular recuo para centralizar cada linha de caixas
+
             int recuoPrimeiraLinha = (larguraTela - ((2 * larguraCaixa) + espacoEntre)) / 2;
             int recuoSegundaLinha = (larguraTela - ((3 * larguraCaixa) + (2 * espacoEntre))) / 2;
 
@@ -442,11 +445,13 @@ void cobraNaCaixa ()
             for(int linha = 0; linha < 2; linha++)
             {
                 //definir quantidade de caixas por linha
+
                 int inicio = (linha == 0) ? 0 : 2;
                 int quantidade = (linha == 0) ? 2 : 3;
                 int recuo = (linha == 0) ? recuoPrimeiraLinha : recuoSegundaLinha;
 
                 //imprimir topo da caixa
+
                 for(int i = 0; i < recuo; i++) printf(" ");
                 for(int i = 0; i < quantidade; i++)
                 {
@@ -456,6 +461,7 @@ void cobraNaCaixa ()
                 printf("\n");
 
                 //imprimir linha vazia da caixa
+
                 for(int i = 0; i < recuo; i++) printf(" ");
                 for(int i = 0; i < quantidade; i++)
                 {
@@ -465,6 +471,7 @@ void cobraNaCaixa ()
                 printf("\n");
 
                 //imprimir conteudo da caixa (X ou numero)
+
                 for(int i = 0; i < recuo; i++) printf(" ");
                 for(int i = 0; i < quantidade; i++)
                 {
@@ -476,6 +483,7 @@ void cobraNaCaixa ()
                 printf("\n");
 
                 //imprimir base da caixa
+
                 for(int i = 0; i < recuo; i++) printf(" ");
                 for(int i = 0; i < quantidade; i++)
                 {
@@ -485,6 +493,7 @@ void cobraNaCaixa ()
                 printf("\n");
 
                 //imprimir numeracao abaixo das caixas
+
                 for(int i = 0; i < recuo; i++) printf(" ");
                 for(int i = 0; i < quantidade; i++)
                 {
@@ -581,7 +590,9 @@ void exibirJogadores (int gousmas [2][2], int ativas[2][2], char nomes[2][50])
     }
 }
 void gousmasWar() {
-    // Variáveis do jogo (Suas variáveis originais)
+    
+    // Variáveis do jogo
+
     int gousmas[2][2];
     int gousmaAtacante;
     int gousmaAlvo;
