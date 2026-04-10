@@ -591,7 +591,7 @@ void gousmasWar ()
     int turnoAtual;
     int jogoAtivo = 1;
     char nomes[2][50];
-    int açaoJogador;
+    int acaoJogador;
 
     //inicialização dos turnos
 
@@ -626,18 +626,18 @@ void gousmasWar ()
         printf("escolha a sua ação\n");
         printf("1. Atacar\n");
         printf("2. dividir\n");
-        scanf("%d", &açaoJogador);
+        scanf("%d", &acaoJogador);
 
         //validação da resposta 
         
-        while(açaoJogador < 1 || açaoJogador > 2)
+        while(acaoJogador < 1 || acaoJogador > 2)
         {
             printf("vez de %s\n", nomes[turnoAtual]);
-            printf("escolha uma opcao valida (1 0u 2)\n")
+            printf("escolha uma opcao valida (1 0u 2)\n");
             printf("escolha a sua ação\n");
             printf("1. Atacar\n");
             printf("2. dividir\n");
-            scanf("%d", &açaoJogador);
+            scanf("%d", &acaoJogador);
         }
 
         //lógica do ataque
@@ -708,7 +708,7 @@ if(ativas[1 - turnoAtual][0] == 0 && ativas[1 - turnoAtual][1] == 0)
 }
 
 
-    } while(jogoAtivo != 0)
+    } while(jogoAtivo != 0);
 }
 int main () 
 {
