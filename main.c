@@ -580,10 +580,8 @@ void exibirJogadores (int gousmas [2][2], int ativas[2][2], char nomes[2][50])
         }
     }
 }
-void gousmasWar () 
-{
-    //variáveis do jogo 3 
-
+void gousmasWar() {
+    // Variáveis do jogo (Suas variáveis originais)
     int gousmas[2][2];
     int gousmaAtacante;
     int gousmaAlvo;
@@ -593,122 +591,144 @@ void gousmasWar ()
     char nomes[2][50];
     int acaoJogador;
 
-    //inicialização dos turnos
-
+    // Inicialização (Sua lógica de sorteio e valores iniciais)
     srand(time(NULL));
     turnoAtual = rand() % 2;
 
-    //inicialização de arrays 
-
-    for(int i = 0; i < 2; i++){
-        for(int j = 0; j < 2; j++)
-        {
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
             gousmas[i][j] = 1;
             ativas[i][j] = 1;
         }
     }
 
-    //pergunta do nome do jogador 1
-
     printf("Jogador 1, qual o seu nome?: ");
     scanf("%s", nomes[0]);
-
-    //pergunta nome jogador 2
-
-    printf("jogador 2, qual o seu nome?: ");
+    printf("Jogador 2, qual o seu nome?: ");
     scanf("%s", nomes[1]);
 
-    //inicio do loop
+    // Início do loop principal
+    do {
+        // Mostra o status através da função
 
-    do{
-        exibirJogadores(gousmas,ativas,nomes);
-        printf("vez de %s\n", nomes[turnoAtual]);
-        printf("escolha a sua ação\n");
+        exibirJogadores(gousmas, ativas, nomes);
+        
+        printf("\nVez de %s\n", nomes[turnoAtual]);
+        printf("Escolha a sua acao:\n");
         printf("1. Atacar\n");
-        printf("2. dividir\n");
+        printf("2. Dividir\n");
         scanf("%d", &acaoJogador);
 
-        //validação da resposta 
-        
-        while(acaoJogador < 1 || acaoJogador > 2)
-        {
-            printf("vez de %s\n", nomes[turnoAtual]);
-            printf("escolha uma opcao valida (1 0u 2)\n");
-            printf("escolha a sua ação\n");
-            printf("1. Atacar\n");
-            printf("2. dividir\n");
+        // Validação da ação
+
+        while (acaoJogador < 1 || acaoJogador > 2) {
+            printf("Escolha uma opcao valida (1 ou 2): ");
             scanf("%d", &acaoJogador);
         }
 
-        //lógica do ataque
+        if (acaoJogador == 1) { 
+            
+            //ataque
+            
+            // Validação da Gousma atacante
 
-            for (int j = 0; j < 2; j++) 
-    {
-        if(ativas[turnoAtual][j] == 1)
-        {
-            printf("gousma %d - %d\n", j + 1, gousmas[turnoAtual][j]);
+            do {
+                printf("Selecione a SUA gousma atacante (1 ou 2): ");
+                scanf("%d", &gousmaAtacante);
+                
+                if (gousmaAtacante < 1 || gousmaAtacante > 2 || ativas[turnoAtual][gousmaAtacante - 1] == 0) {
+                    printf("Invalido! Escolha uma Gousma viva sua.\n");
+                } else {
+                    break;
+                }
+            } while (1);
+
+            // Validação da Gousma alvo
+
+            do {
+                printf("Qual gousma inimiga vai ser atacada? (1 ou 2): ");
+                scanf("%d", &gousmaAlvo);
+                
+                if (gousmaAlvo < 1 || gousmaAlvo > 2 || ativas[1 - turnoAtual][gousmaAlvo - 1] == 0) {
+                    printf("Alvo invalido! Escolha uma gousma ativa do adversario.\n");
+                } else {
+                    break;
+                }
+            } while (1);
+
+            // Soma da fúria
+
+            gousmas[1 - turnoAtual][gousmaAlvo - 1] += gousmas[turnoAtual][gousmaAtacante - 1];
+
+        } else if (acaoJogador == 2) {
+            // lógica da divisão
+            int pontos, gousmaDoadora, gousmaReceptora;
+            
+            // escolhe quem doa
+            printf("Escolha a gousma doadora (1 ou 2): ");
+            scanf("%d", &gousmaDoadora);
+            
+            // valida se a doadora pode dar pontos
+
+            while(gousmaDoadora < 1 || gousmaDoadora > 2 || ativas[turnoAtual][gousmaDoadora - 1] == 0 || gousmas[turnoAtual][gousmaDoadora - 1] <= 1) {
+                printf("Invalido! Escolha uma gousma ativa com furia maior que 1: ");
+                scanf("%d", &gousmaDoadora);
+            }
+
+            // a receptora é sempre a outra gousma do mesmo jogador
+
+            if (gousmaDoadora == 1) {
+                gousmaReceptora = 2;
+            } else {
+                gousmaReceptora = 1;
+            }
+
+            printf("Quantos pontos transferir? (Maximo %d): ", gousmas[turnoAtual][gousmaDoadora - 1] - 1);
+            scanf("%d", &pontos);
+
+            // verifica se os pontos sao validos antes de transferir
+
+            if (pontos >= 1 && pontos < gousmas[turnoAtual][gousmaDoadora - 1]) {
+                gousmas[turnoAtual][gousmaDoadora - 1] -= pontos;
+                gousmas[turnoAtual][gousmaReceptora - 1] += pontos;
+
+                // Regra de reviver: se a outra estava morta, volta pro jogo
+                
+                if (ativas[turnoAtual][gousmaReceptora - 1] == 0) {
+                    ativas[turnoAtual][gousmaReceptora - 1] = 1;
+                    printf("A Gousma %d reviveu!\n", gousmaReceptora);
+                }
+            } else {
+                printf("Quantidade de pontos invalida!\n");
+            }
         }
-    }
-    
-    //gousma atacante
 
-    printf("selecione a gousma atacante\n 1. \n 2.\n");
-    scanf("%d", &gousmaAtacante);
+        // Verificação de destruição (> 5) - Roda para todos após a jogada
 
-    //validação gousma atacante
-
-    while(gousmaAtacante < 1 || gousmaAtacante > 2)
-    {
-     printf("escolha uma opçao valida (1 ou 2)\n");   
-    printf("selecione a gousma atacante\n 1. \n 2.");
-    scanf("%d", &gousmaAtacante);
-    }
-
-    for (int j = 0; j < 2; j++) 
-    {
-        if(ativas[1 - turnoAtual][j] == 1)
-        {
-            printf("gousma %d - furia %d\n", j + 1, gousmas[1 - turnoAtual][j]);
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                if (gousmas[i][j] > 5 && ativas[i][j] == 1) {
+                    printf("\n!!! Gousma %d de %s explodiu !!!\n", j + 1, nomes[i]);
+                    ativas[i][j] = 0;
+                    gousmas[i][j] = 0;
+                }
+            }
         }
-    }
 
-    //gousma atingida
+        // Verificação de vitória 
 
-    printf("qual a gousma que vai ser atacada?\n 1. \n 2\n");
-    scanf("%d", &gousmaAlvo);
+        if (ativas[1 - turnoAtual][0] == 0 && ativas[1 - turnoAtual][1] == 0) {
+            exibirJogadores(gousmas, ativas, nomes);
+            printf("\nPARABENS! %s VENCEU O JOGO!\n", nomes[turnoAtual]);
+            jogoAtivo = 0;
+        } else {
+            
+            //inversão do turno
+            
+            turnoAtual = 1 - turnoAtual;
+        }
 
-    //validação gousma alvo
-
-    while(gousmaAlvo < 1 || gousmaAlvo > 2)
-    {
-        printf("escolha uma alternativa valida (1 ou 2)");
-        printf("qual a gousma que vai ser atacada?\n 1. \n 2\n");
-        scanf("%d", &gousmaAlvo);    
-    }
-
-    ///soma da fúria
-
-    gousmas[1 - turnoAtual][gousmaAlvo - 1] += gousmas[turnoAtual][gousmaAtacante - 1];
-
-    //verificação de destruição das gousmas
-
-    for(int j = 0; j < 2; j++)
-{
-    if(gousmas[1 - turnoAtual][j] > 5)
-    {
-        ativas[1 - turnoAtual][j] = 0;
-    }
-}
-
-if(ativas[1 - turnoAtual][0] == 0 && ativas[1 - turnoAtual][1] == 0)
-{
-    jogoAtivo = 0;
-    printf("%s perdeu!\n", nomes[1 - turnoAtual]);
-    printf("%s venceu!\n", nomes[turnoAtual]);
-}
-
-
-    } while(jogoAtivo != 0);
+    } while (jogoAtivo != 0);
 }
 int main () 
 {
