@@ -26,7 +26,8 @@ Jogo ambientado em uma tumba egípcia onde dois exploradores ficaram presos. No 
 Cada jogador escolhe um nome a partir de uma lista de 7 opções predefinidas e o sistema sorteia quem começa. A posição do botão e da cobra é sorteada aleatoriamente a cada nova partida. Os jogadores se alternam escolhendo uma caixa por turno, sendo proibido escolher uma caixa já aberta. Quem encontrar o botão vence; quem encontrar a cobra perde. Ao final, os jogadores podem jogar novamente ou voltar ao menu.
 
 Gousmas War
-Em desenvolvimento.
+Gousmas War é um jogo de estratégia em turnos para dois jogadores que controlam criaturas chamadas Gousmas. O objetivo é destruir as Gousmas adversárias aumentando a fúria delas através de ataques ou gerenciando sua própria fúria com a ação de dividir. O jogo termina quando um dos jogadores perde suas duas Gousmas por excesso de fúria (fúria > 5).
+
 
 Como Executar
 Clone o repositório:

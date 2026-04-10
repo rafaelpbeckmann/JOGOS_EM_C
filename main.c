@@ -748,7 +748,7 @@ int main ()
         printf("3.Gousmas War\n");
         printf("4.sair\n");
         scanf("%d", &opcao);
-
+        
         //caso de resposta errada
 
         while (opcao < 1 || opcao > 4)
