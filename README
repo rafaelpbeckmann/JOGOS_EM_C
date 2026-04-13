@@ -38,4 +38,4 @@ Execute:
 bash./jogos
 
 Ferramentas e Fontes Utilizadas
-O desenvolvimento do projeto foi realizado com o auxílio do NotebookLM, utilizado como ferramenta de apoio para estruturação da lógica e formulação do código, com base nos materiais e fontes fornecidos pelo professor da disciplina.
+O desenvolvimento do projeto foi realizado com o auxílio do NotebookLM e no ultimo jogo foi utilizado o claude no modelo gratuito, utilizado como ferramenta de apoio para estruturação da lógica e formulação do código, com base nos materiais e fontes fornecidos pelo professor da disciplina.
