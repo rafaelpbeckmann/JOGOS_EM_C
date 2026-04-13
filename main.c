@@ -6,8 +6,11 @@
 
 void perguntasErespostas () 
 {
-    printf("Ola, este jogo se chama perguntas e respsotas!\n");
-    printf("Selecione a alternativa correta para as perguntas, boa sorte!\n");
+    printf("\n============================================================\n");
+    printf("                 PERGUNTAS E RESPOSTAS                      \n");
+    printf("============================================================\n");
+    printf("Responda as perguntas escolhendo a alternativa correta.\n");
+    printf("------------------------------------------------------------\n");
 
     //variaveis do jogo 1
 
@@ -20,26 +23,29 @@ void perguntasErespostas ()
 
     do 
     {
-        printf("pergunta 1\n");
+        printf("\n============================================================\n");
+        printf("                       PERGUNTA 1                           \n");
+        printf("============================================================\n");
         printf("qual o maior planeta do sistema solar?\n");
-        printf("1: marte\n");
-        printf("2: terra\n");
-        printf("3: jupiter\n");
-        printf("4: venus\n");
-        printf("insira sua resposta(1 a 4): ");
+        printf("1. marte\n");
+        printf("2. terra\n");
+        printf("3. jupiter\n");
+        printf("4. venus\n");
+        printf("Resposta (1 a 4): ");
         scanf("%d", &resposta);
 
         // condição de resposta 1
 
         while (resposta < 1 || resposta > 4) 
         {
-        printf("escolha uma alternativa valida(1 a 4)\n");
+        printf("\nOpcao invalida. Escolha uma alternativa valida (1 a 4).\n");
+        printf("------------------------------------------------------------\n");
         printf("qual o maior planeta do sistema solar?\n");
-        printf("1: marte\n");
-        printf("2: terra\n");
-        printf("3: jupiter\n");
-        printf("4: venus\n");
-        printf("insira sua resposta(1 a 4): ");
+        printf("1. marte\n");
+        printf("2. terra\n");
+        printf("3. jupiter\n");
+        printf("4. venus\n");
+        printf("Resposta (1 a 4): ");
         scanf("%d", &resposta);
         }
 
@@ -47,39 +53,42 @@ void perguntasErespostas ()
 
         if (resposta == 3) 
         {
-            printf("parabens! voce acertou!\n");
+            printf("Resultado: parabens! voce acertou!\n");
             acertos[0] = 1;
         }
 
         else 
         {
-            printf("escolha errada!\n");
-            printf("escolha correta era 3(jupiter)\n");
+            printf("Resultado: escolha errada!\n");
+            printf("Resposta correta: 3 (jupiter)\n");
             acertos[0] = 0;
         }
 
         //pergunta2
 
-        printf("pergunta 2\n");
+        printf("\n============================================================\n");
+        printf("                       PERGUNTA 2                           \n");
+        printf("============================================================\n");
         printf("qual e a capital da alemanha?\n");
-        printf("1.Belem\n");
-        printf("2.Berlim\n");
-        printf("3.bruxelas\n");
-        printf("4.toquio\n");
-        printf("insira a sua resposta (1 a 4): ");
+        printf("1. Belem\n");
+        printf("2. Berlim\n");
+        printf("3. bruxelas\n");
+        printf("4. toquio\n");
+        printf("Resposta (1 a 4): ");
         scanf("%d", &resposta);
         
         //condiçao de resposta 2
 
         while(resposta < 1 || resposta > 4) 
         {
-        printf("esolha uma alternativa valida");
+        printf("\nOpcao invalida. Escolha uma alternativa valida (1 a 4).\n");
+        printf("------------------------------------------------------------\n");
         printf("qual e a capital da alemanha?\n");
-        printf("1.Belem\n");
-        printf("2.Berlim\n");
-        printf("3.bruxelas\n");
-        printf("4.toquio\n");
-        printf("insira a sua resposta (1 a 4): ");
+        printf("1. Belem\n");
+        printf("2. Berlim\n");
+        printf("3. bruxelas\n");
+        printf("4. toquio\n");
+        printf("Resposta (1 a 4): ");
         scanf("%d", &resposta);
         }
 
@@ -87,39 +96,42 @@ void perguntasErespostas ()
 
         if(resposta == 2) 
         {
-            printf("parabens! voce acertou!");
+            printf("Resultado: parabens! voce acertou!\n");
             acertos[1] = 1;
         }
 
         else
         {
-            printf("escolha errada!\n");
-            printf("a escolha correta era 2. Berlim\n");
+            printf("Resultado: escolha errada!\n");
+            printf("Resposta correta: 2. Berlim\n");
             acertos[1] = 0;
         }
 
         //pergunta 3
 
-        printf("pergunta 3\n");
+        printf("\n============================================================\n");
+        printf("                       PERGUNTA 3                           \n");
+        printf("============================================================\n");
         printf("se um anel tem 3 pedras, quantas pedras tem 11 aneis ?\n");
-        printf("1.33\n");
-        printf("2.300\n");
-        printf("3.27\n");
-        printf("4.90\n");
-        printf("insira a sua resposta (1 a 4): ");
+        printf("1. 33\n");
+        printf("2. 300\n");
+        printf("3. 27\n");
+        printf("4. 90\n");
+        printf("Resposta (1 a 4): ");
         scanf("%d", &resposta);
 
         //condição de resposta 3
 
         while(resposta < 1 || resposta > 4) 
         {
-           printf("escolha uma alternativa valida\n");
+           printf("\nOpcao invalida. Escolha uma alternativa valida (1 a 4).\n");
+           printf("------------------------------------------------------------\n");
            printf("se um anel tem 3 pedras, quantas pedras tem 11 aneis ?\n");
-           printf("1.33\n");
-           printf("2.300\n");
-           printf("3.27\n");
-           printf("4.90\n");
-           printf("insira a sua resposta (1 a 4): ");
+           printf("1. 33\n");
+           printf("2. 300\n");
+           printf("3. 27\n");
+           printf("4. 90\n");
+           printf("Resposta (1 a 4): ");
            scanf("%d", &resposta);
         }
 
@@ -127,38 +139,42 @@ void perguntasErespostas ()
 
         if(resposta == 1) 
         {
-            printf("parabens! voce acertou!\n");
+            printf("Resultado: parabens! voce acertou!\n");
             acertos[2] = 1;
         }
 
         else 
         {
-            printf("escolha errada!\n");
-            printf("a escolha correta era 1.clube do remo\n");
+            printf("Resultado: escolha errada!\n");
+            printf("Resposta correta: 1. clube do remo\n");
             acertos[2] = 0;
         }
 
         //pergunta 4
 
-        printf("pergunta 4\n");
+        printf("\n============================================================\n");
+        printf("                       PERGUNTA 4                           \n");
+        printf("============================================================\n");
         printf("A queda do muro de Berlim foi um marco de qual evento histórico?\n");
-        printf("1.Guerra da viatna\n");
-        printf("2.Guerra da Coreia\n");
-        printf("3.Invasao da normandia\n");
-        printf("4.Guerra fria\n");
-        printf("insira sua resposta(1 a 4): ");
+        printf("1. Guerra da viatna\n");
+        printf("2. Guerra da Coreia\n");
+        printf("3. Invasao da normandia\n");
+        printf("4. Guerra fria\n");
+        printf("Resposta (1 a 4): ");
         scanf("%d", &resposta);
 
         //validação da resposta 4
 
         while(resposta < 1 || resposta > 4)
         {
-            printf("escolha uma alternativa valida\n");
+            printf("\nOpcao invalida. Escolha uma alternativa valida (1 a 4).\n");
+            printf("------------------------------------------------------------\n");
             printf("A queda do muro de Berlim foi um marco de qual evento histórico?\n");
-            printf("1.Guerra da viatna\n");
-            printf("2.Guerra da Coreia\n");
-            printf("3.Invasão da normandia\n");
-            printf("4.Guerra fria\n");
+            printf("1. Guerra da viatna\n");
+            printf("2. Guerra da Coreia\n");
+            printf("3. Invasao da normandia\n");
+            printf("4. Guerra fria\n");
+            printf("Resposta (1 a 4): ");
             scanf("%d", &resposta);
         }
 
@@ -166,50 +182,53 @@ void perguntasErespostas ()
 
         if(resposta == 4)
         {
-            printf("parabens! voce acertou!\n");
+            printf("Resultado: parabens! voce acertou!\n");
             acertos[3] = 1;    
         }
 
         else
         {
-            printf("escolha errada\n");
+            printf("Resultado: escolha errada!\n");
             acertos[3] = 0;
         }
 
         //pergunta 5
 
-        printf("pergunta 5\n");
+        printf("\n============================================================\n");
+        printf("                       PERGUNTA 5                           \n");
+        printf("============================================================\n");
         printf("como e chamado o ponto mais distante entre continentes?\n");
-        printf("1.triangulo das bermudas\n");
-        printf("2.ponto nemo\n");
-        printf("3.mar do pacifico\n");
-        printf("4.polo norte\n");
-        printf("insira a sua resposta(1 a 4): \n");
+        printf("1. triangulo das bermudas\n");
+        printf("2. ponto nemo\n");
+        printf("3. mar do pacifico\n");
+        printf("4. polo norte\n");
+        printf("Resposta (1 a 4): ");
         scanf("%d", &resposta);
 
         //validação da pergunta 5
 
         while(resposta < 1 || resposta > 4)
         {
-        printf("insira uma resposra valida(1 a 4)");
-        printf("como é chamado o ponto mais distante entre continentes?\n");
-        printf("1.triangulo das bermudas\n");
-        printf("2.ponto nemo\n");
-        printf("3.mar do pacifico\n");
-        printf("4.polo norte\n");
-        printf("insira a sua resposta(1 a 4): ");
+        printf("\nOpcao invalida. Escolha uma alternativa valida (1 a 4).\n");
+        printf("------------------------------------------------------------\n");
+        printf("como e chamado o ponto mais distante entre continentes?\n");
+        printf("1. triangulo das bermudas\n");
+        printf("2. ponto nemo\n");
+        printf("3. mar do pacifico\n");
+        printf("4. polo norte\n");
+        printf("Resposta (1 a 4): ");
         scanf("%d", &resposta);
         }
 
         if(resposta == 2) 
         {
-            printf("parabens! voce acertou!");
+            printf("Resultado: parabens! voce acertou!\n");
             acertos[4] = 1;
         }
 
         else
         {
-            printf("escolha errada\n");
+            printf("Resultado: escolha errada!\n");
             acertos[4] = 0;
         }
 
@@ -217,30 +236,34 @@ void perguntasErespostas ()
 
         //mostrar resultados
 
-        printf("a sequencia correta era: 3,2,1,4,2\n");
+        printf("\n============================================================\n");
+        printf("                     FIM DA RODADA                          \n");
+        printf("============================================================\n");
+        printf("Sequencia correta: 3, 2, 1, 4, 2\n");
 
         //pergunta ao usuario
 
-        printf("O que voce deseja? (selecione 1 ou 2)\n");
-        printf("1.jogar novamente\n");
-        printf("2.ir para o menu\n");
-        printf("escolha: ");
+        printf("------------------------------------------------------------\n");
+        printf("O que voce deseja?\n");
+        printf("1. Jogar novamente\n");
+        printf("2. Ir para o menu\n");
+        printf("Escolha: ");
         scanf("%d", &novaJogada);
 
         //validaçao da escolha
 
         while(novaJogada < 1 || novaJogada > 2)
         {
-        printf("escolha inválida selecione 1 ou 2\n");
-        printf("1.jogar novamente\n");
-        printf("2.ir para o menu\n");
-        printf("escolha: ");
+        printf("\nOpcao invalida. Selecione 1 ou 2.\n");
+        printf("1. Jogar novamente\n");
+        printf("2. Ir para o menu\n");
+        printf("Escolha: ");
         scanf("%d", &novaJogada);
         }
 
         if (novaJogada == 2)
         {
-            printf("obrigado por jogar!");
+            printf("\nObrigado por jogar!\n");
             return;
         }
     } while(novaJogada == 1);
@@ -265,37 +288,48 @@ void cobraNaCaixa ()
 
     //menu do jogo
 
+    printf("\n============================================================\n");
+    printf("                     COBRA NA CAIXA                         \n");
+    printf("============================================================\n");
+    printf("Escolha os nomes dos jogadores para iniciar.\n");
+    printf("------------------------------------------------------------\n");
+
     for(int i = 0 ; i < 7; i++)
     {
-        printf("%d - %s\n", i + 1, nomes[i]);
+        printf("%d. %s\n", i + 1, nomes[i]);
     }
 
     //resposta do jogador 1
     
-    printf("jogador 1, qual o numero do seu nome?\n: ");
+    printf("------------------------------------------------------------\n");
+    printf("Jogador 1, qual o numero do seu nome?\n");
+    printf("Escolha: ");
     scanf("%d", &escolhaJogador);
 
     //validação de resposta do jogador 1
 
     while(escolhaJogador < 1 || escolhaJogador > 7)
     {
-    printf("escolha inválida, tente novamente\n");
-    printf("jogador 1, qual o numero do seu nome?\n: ");
+    printf("\nOpcao invalida, tente novamente.\n");
+    printf("Jogador 1, qual o numero do seu nome?\n");
+    printf("Escolha: ");
     scanf("%d", &escolhaJogador);
     }
     idNome1 = escolhaJogador - 1;
 
     //resposta do jogador 2
 
-    printf("jogador 2, qual o numero do seu nome?\n: ");
+    printf("\nJogador 2, qual o numero do seu nome?\n");
+    printf("Escolha: ");
     scanf("%d", &escolhaJogador);
 
     //validação de resposta do jogador 2
 
     while(escolhaJogador < 1 || escolhaJogador > 7)
     {
-        printf("escolha invalida, tente novamente\n");
-        printf("jogador 2, qual o numero do seu nome?\n: ");
+        printf("\nOpcao invalida, tente novamente.\n");
+        printf("Jogador 2, qual o numero do seu nome?\n");
+        printf("Escolha: ");
         scanf("%d", &escolhaJogador);
     }
     idNome2 = escolhaJogador - 1;
@@ -324,14 +358,19 @@ void cobraNaCaixa ()
     {
         if(jogadorAtual == 0) 
         {
-            printf("vez de %s\n", nomes[idNome1]);
+            printf("\n============================================================\n");
+            printf("Vez de %s\n", nomes[idNome1]);
+            printf("============================================================\n");
         }
         else
         {
-            printf("vez de %s\n", nomes[idNome2]);
+            printf("\n============================================================\n");
+            printf("Vez de %s\n", nomes[idNome2]);
+            printf("============================================================\n");
         }
 
-        printf("ola jogador, faca a escolha das suas caixas! \n");
+        printf("Escolha uma caixa disponivel.\n");
+        printf("------------------------------------------------------------\n");
         {
             //imprimir caixas
 
@@ -411,7 +450,7 @@ void cobraNaCaixa ()
                 if(linha == 0) printf("\n");
             }
         }
-        printf("escolha a sua caixa: ");
+        printf("\nEscolha a sua caixa: ");
         scanf("%d", &escolhaJogador);
 
         //validação de resposta
@@ -420,13 +459,14 @@ void cobraNaCaixa ()
         {
         if(escolhaJogador >= 1 && escolhaJogador <= 5 && caixas[escolhaJogador - 1] == 1)
         {
-            printf("esta caixa ja foi aberta, escolha outra\n");
+            printf("\nEssa caixa ja foi aberta, escolha outra.\n");
         }
         else
         {
-        printf("a escolha deve ser de um dos numeros abaixo, tente de novo\n");
+        printf("\nEscolha invalida. Use um numero de caixa valido.\n");
         }
-        printf("ola jogador, faca a escolha das suas caixas! \n");
+        printf("Escolha uma caixa disponivel.\n");
+        printf("------------------------------------------------------------\n");
         {
             //imprimir caixas
 
@@ -506,7 +546,7 @@ void cobraNaCaixa ()
                 if(linha == 0) printf("\n");
             }
         }
-        printf("escolha a sua caixa: ");
+        printf("\nEscolha a sua caixa: ");
         scanf("%d", &escolhaJogador);
         }
 
@@ -514,13 +554,17 @@ void cobraNaCaixa ()
         {
             if(jogadorAtual == 0)
             {
+                printf("\n============================================================\n");
                 printf("%s venceu! Encontrou o botao!\n", nomes[idNome1]);
                 printf("%s perdeu.\n", nomes[idNome2]);
+                printf("============================================================\n");
             }
             else
             {
+                printf("\n============================================================\n");
                 printf("%s venceu! Encontrou o botao!\n", nomes[idNome2]);
                 printf("%s perdeu.\n", nomes[idNome1]);
+                printf("============================================================\n");
             }
             break;
         }
@@ -528,13 +572,17 @@ void cobraNaCaixa ()
         {
             if(jogadorAtual == 0)
             {
+                printf("\n============================================================\n");
                 printf("%s perdeu! A cobra estava nessa caixa!\n", nomes[idNome1]);
                 printf("%s venceu!\n", nomes[idNome2]);
+                printf("============================================================\n");
             }
             else
             {
+                printf("\n============================================================\n");
                 printf("%s perdeu! A cobra estava nessa caixa!\n", nomes[idNome2]);
                 printf("%s venceu!\n", nomes[idNome1]);
+                printf("============================================================\n");
             }
             break;
         }
@@ -545,18 +593,19 @@ void cobraNaCaixa ()
         }
     }
 
-    printf("O que voce deseja? (selecione 1 ou 2)\n");
-    printf("1.jogar novamente\n");
-    printf("2.voltar ao menu\n");
-    printf("escolha: ");
+    printf("\n------------------------------------------------------------\n");
+    printf("O que voce deseja?\n");
+    printf("1. Jogar novamente\n");
+    printf("2. Voltar ao menu\n");
+    printf("Escolha: ");
     scanf("%d", &novaJogada);
 
     while(novaJogada < 1 || novaJogada > 2)
     {
-        printf("escolha invalida, selecione 1 ou 2\n");
-        printf("1.jogar novamente\n");
-        printf("2.voltar ao menu\n");
-        printf("escolha: ");
+        printf("\nOpcao invalida, selecione 1 ou 2.\n");
+        printf("1. Jogar novamente\n");
+        printf("2. Voltar ao menu\n");
+        printf("Escolha: ");
         scanf("%d", &novaJogada);
     }
 
@@ -575,16 +624,16 @@ void exibirJogadores (int gousmas [2][2], int ativas[2][2], char nomes[2][50])
 {
     for(int i = 0;i < 2; i++)
     {
-        printf("jogador %d - %s\n", i + 1, nomes[i]);
+        printf("\nJogador %d - %s\n", i + 1, nomes[i]);
         for (int j = 0; j < 2; j++) 
         {
             if(ativas[i][j] == 1)
             {
-            printf("gousma %d - %d\n",j + 1, gousmas[i][j]);
+            printf("  Gousma %d - %d\n",j + 1, gousmas[i][j]);
             }
             else 
             {
-                printf("gousma %d: destruida\n", j + 1);
+                printf("  Gousma %d: destruida\n", j + 1);
             }
         }
     }
@@ -614,6 +663,9 @@ void gousmasWar() {
         }
     }
 
+    printf("\n============================================================\n");
+    printf("                       GOUSMAS WAR                          \n");
+    printf("============================================================\n");
     printf("Jogador 1, qual o seu nome?: ");
     scanf("%s", nomes[0]);
     printf("Jogador 2, qual o seu nome?: ");
@@ -623,18 +675,24 @@ void gousmasWar() {
     do {
         // Mostra o status através da função
 
+        printf("\n------------------------------------------------------------\n");
+        printf("                    STATUS DA PARTIDA                       \n");
+        printf("------------------------------------------------------------\n");
         exibirJogadores(gousmas, ativas, nomes);
         
-        printf("\nVez de %s\n", nomes[turnoAtual]);
+        printf("\n============================================================\n");
+        printf("Vez de %s\n", nomes[turnoAtual]);
+        printf("============================================================\n");
         printf("Escolha a sua acao:\n");
         printf("1. Atacar\n");
         printf("2. Dividir\n");
+        printf("Escolha: ");
         scanf("%d", &acaoJogador);
 
         // Validação da ação
 
         while (acaoJogador < 1 || acaoJogador > 2) {
-            printf("Escolha uma opcao valida (1 ou 2): ");
+            printf("Opcao invalida. Escolha 1 ou 2: ");
             scanf("%d", &acaoJogador);
         }
 
@@ -645,11 +703,11 @@ void gousmasWar() {
             // Validação da Gousma atacante
 
             do {
-                printf("Selecione a SUA gousma atacante (1 ou 2): ");
+                printf("\nSelecione a sua gousma atacante (1 ou 2): ");
                 scanf("%d", &gousmaAtacante);
                 
                 if (gousmaAtacante < 1 || gousmaAtacante > 2 || ativas[turnoAtual][gousmaAtacante - 1] == 0) {
-                    printf("Invalido! Escolha uma Gousma viva sua.\n");
+                    printf("Invalido! Escolha uma gousma sua que esteja ativa.\n");
                 } else {
                     break;
                 }
@@ -677,7 +735,7 @@ void gousmasWar() {
             int pontos, gousmaDoadora, gousmaReceptora;
             
             // escolhe quem doa
-            printf("Escolha a gousma doadora (1 ou 2): ");
+            printf("\nEscolha a gousma doadora (1 ou 2): ");
             scanf("%d", &gousmaDoadora);
             
             // valida se a doadora pode dar pontos
@@ -708,7 +766,7 @@ void gousmasWar() {
 
                 if (ativas[turnoAtual][gousmaReceptora - 1] == 0) {
                     ativas[turnoAtual][gousmaReceptora - 1] = 1;
-                    printf("A Gousma %d reviveu!\n", gousmaReceptora);
+                    printf("\nA Gousma %d reviveu!\n", gousmaReceptora);
                 }
             } else {
                 printf("Quantidade de pontos invalida!\n");
@@ -720,7 +778,9 @@ void gousmasWar() {
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
                 if (gousmas[i][j] > 5 && ativas[i][j] == 1) {
-                    printf("\n!!! Gousma %d de %s explodiu !!!\n", j + 1, nomes[i]);
+                    printf("\n============================================================\n");
+                    printf("!!! Gousma %d de %s explodiu !!!\n", j + 1, nomes[i]);
+                    printf("============================================================\n");
                     ativas[i][j] = 0;
                     gousmas[i][j] = 0;
                 }
@@ -731,7 +791,9 @@ void gousmasWar() {
 
         if (ativas[1 - turnoAtual][0] == 0 && ativas[1 - turnoAtual][1] == 0) {
             exibirJogadores(gousmas, ativas, nomes);
-            printf("\nPARABENS! %s VENCEU O JOGO!\n", nomes[turnoAtual]);
+            printf("\n============================================================\n");
+            printf("PARABENS! %s VENCEU O JOGO!\n", nomes[turnoAtual]);
+            printf("============================================================\n");
             jogoAtivo = 0;
         } else {
             
@@ -742,6 +804,38 @@ void gousmasWar() {
 
     } while (jogoAtivo != 0);
 }
+
+int lerOpcaoMenu() 
+{
+    char entrada[64];
+    char *fimNumero;
+    long opcaoLida;
+
+    if (fgets(entrada, sizeof(entrada), stdin) == NULL) {
+        return -1;
+    }
+
+    opcaoLida = strtol(entrada, &fimNumero, 10);
+
+    if (fimNumero == entrada) {
+        return -1;
+    }
+
+    while (*fimNumero != '\0') {
+        if (*fimNumero != '\n' && *fimNumero != ' ' && *fimNumero != '\t' && *fimNumero != '\r') {
+            return -1;
+        }
+
+        fimNumero++;
+    }
+
+    if (opcaoLida < 1 || opcaoLida > 4) {
+        return -1;
+    }
+
+    return (int)opcaoLida;
+}
+
 int main () 
 {
     //variaveis menu
@@ -753,24 +847,36 @@ int main ()
 
         //exibição do menu
 
-        printf("selecione a sua opcao\n");
-        printf("1.Perguntas e respostas\n");
-        printf("2.Cobra na caixa\n");
-        printf("3.Gousmas War\n");
-        printf("4.sair\n");
-        scanf("%d", &opcao);
+        printf("\n============================================================\n");
+        printf("                      JOGOS EM C                            \n");
+        printf("============================================================\n");
+        printf("                    MENU PRINCIPAL                          \n");
+        printf("------------------------------------------------------------\n");
+        printf("  1. Perguntas e respostas\n");
+        printf("  2. Cobra na caixa\n");
+        printf("  3. Gousmas War\n");
+        printf("  4. Sair\n");
+        printf("------------------------------------------------------------\n");
+        printf("Selecione a sua opcao: ");
+        opcao = lerOpcaoMenu();
         
         //caso de resposta errada
 
         while (opcao < 1 || opcao > 4)
         {
-            printf("escolha invalida, selecione uma das opções abaixo!");
-            printf("selecione a sua opcao\n");
-            printf("1.Perguntas e respostas\n");
-            printf("2.Cobra na caixa\n");
-            printf("3.Gousmas War\n");
-            printf("4.sair");
-            scanf("%d", &opcao);
+            printf("\nOpcao invalida, selecione uma das opcoes abaixo.\n");
+            printf("============================================================\n");
+            printf("                      JOGOS EM C                            \n");
+            printf("============================================================\n");
+            printf("                    MENU PRINCIPAL                          \n");
+            printf("------------------------------------------------------------\n");
+            printf("  1. Perguntas e respostas\n");
+            printf("  2. Cobra na caixa\n");
+            printf("  3. Gousmas War\n");
+            printf("  4. Sair\n");
+            printf("------------------------------------------------------------\n");
+            printf("Selecione a sua opcao: ");
+            opcao = lerOpcaoMenu();
         }
 
         // lógica de escolha
