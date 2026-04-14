@@ -211,7 +211,7 @@ void perguntasErespostas (void)
             printf("Resultado: parabens! voce acertou!\n");
         } else {
             printf("Resultado: escolha errada!\n");
-            printf("Resposta correta: 1. clube do remo\n");
+            printf("Resposta correta: 1. 33\n");
         }
 
         resposta = lerInteiroIntervaloComBloco(1, 4, imprimirPergunta4, NULL);
